@@ -1,10 +1,12 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const StatusSection = ({progress,resolve,setResolve,setProgress}) => {
+const StatusSection = ({progress,resolve,setResolve,setProgress,tickets,setTickets}) => {
 
     const handleResolve=(ticket)=>{
             setResolve([...resolve,ticket]);
+            const updateTicket=tickets.filter(ti=>ti.id!==ticket.id);
+            setTickets(updateTicket);
         const updateProgress=progress.filter(p=>p.id!==ticket.id);
         setProgress(updateProgress);
         toast.success("Complete.Task Added on the Resolve list")

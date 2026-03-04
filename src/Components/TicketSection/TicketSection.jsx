@@ -1,8 +1,15 @@
-import React, { use } from "react";
+import React, { use, useEffect } from "react";
 import TicketCard from "../TicketCard/TicketCard";
 
-const TicketSection = ({ ticketPromice,setProgress,progress }) => {
-    const tickets=use(ticketPromice)
+const TicketSection = ({ ticketPromice,setProgress,progress,setTickets,tickets }) => {
+    const data=use(ticketPromice)
+   
+    useEffect(()=>{
+
+      if(data){
+        setTickets(data)
+      }
+    },[data,setTickets])
   return (
     <div className="px-4 py-6 max-w-7xl mx-auto">
       {/* Title */}

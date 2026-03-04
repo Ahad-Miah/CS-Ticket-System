@@ -17,6 +17,7 @@ const ticketPromice = fetchTickets();
 function App() {
   const [progress,setProgress]=useState([]);
   const [resolve,setResolve]=useState([]);
+  const[tickets,setTickets]=useState([])
   return (
     <div>
       <Navbar></Navbar>
@@ -36,10 +37,10 @@ function App() {
               }
             >
               {" "}
-              <TicketSection progress={progress} setProgress={setProgress} ticketPromice={ticketPromice}></TicketSection>
+              <TicketSection tickets={tickets} setTickets={setTickets} progress={progress} setProgress={setProgress} ticketPromice={ticketPromice}></TicketSection>
             </Suspense>
           </div>
-          <StatusSection setProgress={setProgress} setResolve={setResolve} resolve={resolve} progress={progress} className=" border border-blue-700 h-60"></StatusSection>
+          <StatusSection tickets={tickets} setTickets={setTickets} setProgress={setProgress} setResolve={setResolve} resolve={resolve} progress={progress} className=" border border-blue-700 h-60"></StatusSection>
         </div>
       </section>
       <FooTer></FooTer>
