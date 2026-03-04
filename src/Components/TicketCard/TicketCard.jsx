@@ -1,17 +1,20 @@
 import React from 'react';
 import { LuCalendarDays } from "react-icons/lu";
 
-const TicketCard = ({ticket}) => {
+const TicketCard = ({ticket,setProgress,progress}) => {
+  const handleClick=(Pticket)=>{
+    setProgress([...progress, Pticket]);
+  }
     return (
-         <div 
+         <div onClick={()=>handleClick(ticket)}
             className="flex flex-col bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow w-full"
           >
             <div className="flex flex-col sm:flex-row justify-between items-start gap-4 mb-4">
               <h2 className="text-md md:text-lg font-bold text-slate-900 leading-tight">
                 {ticket.title}
               </h2>
-              <div className="badge badge-lg py-4 px-4 gap-2 bg-[#D1FAE5] border-none text-[#065F46] font-semibold whitespace-nowrap">
-                <div className="h-3 w-3 rounded-full bg-[#10B981]"></div>
+              <div className={`badge badge-lg py-4 px-4 gap-2 ${ticket.status=="Open"?"bg-[#B9F8CF]":"bg-[#F8F3B9]"} border-none text-[#065F46] font-semibold whitespace-nowrap`}>
+                <div className={`h-3 w-3 rounded-full ${ticket.status=="Open"?"bg-[#02A53B]":"bg-[#FEBB0C]"}`}></div>
                 {ticket.status}
               </div>
             </div>

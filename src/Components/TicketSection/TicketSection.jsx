@@ -1,7 +1,7 @@
 import React, { use } from "react";
 import TicketCard from "../TicketCard/TicketCard";
 
-const TicketSection = ({ ticketPromice }) => {
+const TicketSection = ({ ticketPromice,setProgress,progress }) => {
     const tickets=use(ticketPromice)
   return (
     <div className="px-4 py-6 max-w-7xl mx-auto">
@@ -11,7 +11,7 @@ const TicketSection = ({ ticketPromice }) => {
       </h3>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {tickets.map((ticket) => (
-         <TicketCard key={ticket.id} ticket={ticket}></TicketCard>
+         <TicketCard progress={progress} setProgress={setProgress} key={ticket.id} ticket={ticket}></TicketCard>
         ))}
       </div>
     </div>

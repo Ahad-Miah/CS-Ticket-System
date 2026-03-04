@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import "./App.css";
 import Banner from "./Components/Banner/Banner";
 import Navbar from "./Components/Navbar/Navbar";
@@ -14,11 +14,12 @@ const fetchTickets = async () => {
 const ticketPromice = fetchTickets();
 
 function App() {
+  const [progress,setProgress]=useState([]);
   return (
     <div>
       <Navbar></Navbar>
       <section className="bg-[#dee5ea] pb-20">
-        <Banner></Banner>
+        <Banner progress={progress}></Banner>
         <div className=" mx-5 md:mx-10 md:grid grid-cols-4 gap-[24px]">
           <div className="col-span-3">
             <Suspense
@@ -33,10 +34,10 @@ function App() {
               }
             >
               {" "}
-              <TicketSection ticketPromice={ticketPromice}></TicketSection>
+              <TicketSection progress={progress} setProgress={setProgress} ticketPromice={ticketPromice}></TicketSection>
             </Suspense>
           </div>
-          <StatusSection className=" border border-blue-700 h-60"></StatusSection>
+          <StatusSection progress={progress} className=" border border-blue-700 h-60"></StatusSection>
         </div>
       </section>
       <FooTer></FooTer>
