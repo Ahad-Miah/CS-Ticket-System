@@ -4,6 +4,7 @@ import Banner from "./Components/Banner/Banner";
 import Navbar from "./Components/Navbar/Navbar";
 import StatusSection from "./Components/StatusSection/StatusSection";
 import TicketSection from "./Components/TicketSection/TicketSection";
+import FooTer from "./Components/Footer/Footer";
 
 const fetchTickets = async () => {
   const ticketResponse = await fetch("/tickets.json").then((res) => res.json());
@@ -16,9 +17,9 @@ function App() {
   return (
     <div>
       <Navbar></Navbar>
-      <section className="bg-[#dee5ea]">
+      <section className="bg-[#dee5ea] pb-20">
         <Banner></Banner>
-        <div className=" mx-5 md:mx-10 border-red-500 md:grid grid-cols-4 gap-[24px]">
+        <div className=" mx-5 md:mx-10 md:grid grid-cols-4 gap-[24px]">
           <div className="col-span-3">
             <Suspense
               fallback={
@@ -38,6 +39,7 @@ function App() {
           <StatusSection className=" border border-blue-700 h-60"></StatusSection>
         </div>
       </section>
+      <FooTer></FooTer>
     </div>
   );
 }
