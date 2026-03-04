@@ -1,0 +1,137 @@
+[
+  {
+    "id": "TKT-1001",
+    "title": "Login Authentication Failure",
+    "description": "User unable to log in despite correct credentials. Error 403 shown.",
+    "customer": "John Miller",
+    "priority": "High",
+    "status": "In-Progress",
+    "createdAt": "2026-03-01T09:15:00Z"
+  },
+  {
+    "id": "TKT-1002",
+    "title": "Payment Gateway Timeout",
+    "description": "Stripe integration timing out during checkout process on mobile devices.",
+    "customer": "Elena Rossi",
+    "priority": "Critical",
+    "status": "Open",
+    "createdAt": "2026-03-01T10:30:00Z"
+  },
+  {
+    "id": "TKT-1003",
+    "title": "Dashboard Metric Lag",
+    "description": "The 'Open Tickets' counter on the admin dashboard lags by 5 minutes.",
+    "customer": "David Chen",
+    "priority": "Low",
+    "status": "Resolved",
+    "createdAt": "2026-03-01T11:45:00Z"
+  },
+  {
+    "id": "TKT-1004",
+    "title": "Update FAQ Documentation",
+    "description": "The help center article for password resets is outdated.",
+    "customer": "Sara Adami",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2026-03-02T08:00:00Z"
+  },
+  {
+    "id": "TKT-1005",
+    "title": "Email Notification Bug",
+    "description": "Customers are not receiving 'Ticket Created' confirmation emails.",
+    "customer": "Marcus Thorne",
+    "priority": "Medium",
+    "status": "In-Progress",
+    "createdAt": "2026-03-02T13:20:00Z"
+  },
+  {
+    "id": "TKT-1006",
+    "title": "API Rate Limit Error",
+    "description": "Third-party CRM sync hitting limits every hour. Need optimization.",
+    "customer": "Lila Varma",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-02T15:10:00Z"
+  },
+  {
+    "id": "TKT-1007",
+    "title": "UI Alignment on Firefox",
+    "description": "Navigation bar is overlapping with the sidebar on Firefox v120+.",
+    "customer": "Sarah Jenkins",
+    "priority": "Medium",
+    "status": "Closed",
+    "createdAt": "2026-03-03T09:00:00Z"
+  },
+  {
+    "id": "TKT-1008",
+    "title": "Database Optimization",
+    "description": "Slow query performance on ticket search for large datasets.",
+    "customer": "Kevin Hart",
+    "priority": "High",
+    "status": "In-Progress",
+    "createdAt": "2026-03-03T11:15:00Z"
+  },
+  {
+    "id": "TKT-1009",
+    "title": "Broken Image Links",
+    "description": "Profile pictures on user avatars are showing 404 errors.",
+    "customer": "Fiona Gallagher",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2026-03-03T14:45:00Z"
+  },
+  {
+    "id": "TKT-1010",
+    "title": "Refund Request processing",
+    "description": "Customer requested refund for transaction #99821. Waiting for approval.",
+    "customer": "Mark Thompson",
+    "priority": "Medium",
+    "status": "Pending",
+    "createdAt": "2026-03-04T10:00:00Z"
+  },
+  {
+    "id": "TKT-1011",
+    "title": "Security Vulnerability Patch",
+    "description": "Need to update NPM packages to address security advisory CVE-2026.",
+    "customer": "Robert Klein",
+    "priority": "Critical",
+    "status": "In-Progress",
+    "createdAt": "2026-03-04T11:30:00Z"
+  },
+  {
+    "id": "TKT-1012",
+    "title": "Mobile App Crash",
+    "description": "App crashes immediately upon opening the 'History' tab on Android.",
+    "customer": "Chloe Zhao",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-04T16:05:00Z"
+  },
+  {
+    "id": "TKT-1013",
+    "title": "Incorrect Sales Tax Calc",
+    "description": "Tax calculation for UK residents is not applying the 20% VAT correctly.",
+    "customer": "Simon Peter",
+    "priority": "High",
+    "status": "In-Progress",
+    "createdAt": "2026-03-05T07:45:00Z"
+  },
+  {
+    "id": "TKT-1014",
+    "title": "New Feature Request: Dark Mode",
+    "description": "Request to add a dark mode toggle for the customer portal.",
+    "customer": "Alice Wong",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2026-03-05T08:30:00Z"
+  },
+  {
+    "id": "TKT-1015",
+    "title": "Bulk Upload Failure",
+    "description": "CSV upload failing when file contains more than 500 rows.",
+    "customer": "James Bond",
+    "priority": "Medium",
+    "status": "Resolved",
+    "createdAt": "2026-03-05T09:20:00Z"
+  }
+]

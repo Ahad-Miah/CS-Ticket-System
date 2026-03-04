@@ -1,17 +1,45 @@
-import './App.css'
-import Banner from './Components/Banner/Banner'
-import Navbar from './Components/Navbar/Navbar'
+import { Suspense } from "react";
+import "./App.css";
+import Banner from "./Components/Banner/Banner";
+import Navbar from "./Components/Navbar/Navbar";
+import StatusSection from "./Components/StatusSection/StatusSection";
+import TicketSection from "./Components/TicketSection/TicketSection";
+
+const fetchTickets = async () => {
+  const ticketResponse = await fetch("/tickets.json").then((res) => res.json());
+  return ticketResponse;
+};
+
+const ticketPromice = fetchTickets();
 
 function App() {
-
   return (
     <div>
-   <Navbar></Navbar>
-   <section className='bg-[#dee5ea] h-[1176px]'>
-  <Banner></Banner>
-   </section>
+      <Navbar></Navbar>
+      <section className="bg-[#dee5ea]">
+        <Banner></Banner>
+        <div className=" mx-5 md:mx-10 border-red-500 md:grid grid-cols-4 gap-[24px]">
+          <div className="col-span-3">
+            <Suspense
+              fallback={
+                <div>
+                  <span className="loading loading-bars loading-xs"></span>
+                  <span className="loading loading-bars loading-sm"></span>
+                  <span className="loading loading-bars loading-md"></span>
+                  <span className="loading loading-bars loading-lg"></span>
+                  <span className="loading loading-bars loading-xl"></span>
+                </div>
+              }
+            >
+              {" "}
+              <TicketSection ticketPromice={ticketPromice}></TicketSection>
+            </Suspense>
+          </div>
+          <StatusSection className=" border border-blue-700 h-60"></StatusSection>
+        </div>
+      </section>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
