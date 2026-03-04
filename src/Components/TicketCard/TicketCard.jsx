@@ -2,8 +2,17 @@ import React from 'react';
 import { LuCalendarDays } from "react-icons/lu";
 import { toast } from 'react-toastify';
 
-const TicketCard = ({ticket,setProgress,progress}) => {
+const TicketCard = ({ticket,setProgress,progress,setTickets,tickets}) => {
   const handleClick=(Pticket)=>{
+    const updateStatus = tickets.map((ti) => {
+    if (ti.id === ticket.id) {
+      return { ...ti, status: "In-Progress" };
+    }
+    return ti; 
+  });
+
+  setTickets(updateStatus);
+
     setProgress([...progress, Pticket]);
     toast.success("Added Ticket. Ticket is in Progress")
   }

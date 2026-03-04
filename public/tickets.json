@@ -23,7 +23,7 @@
     "description": "The 'Open Tickets' counter on the admin dashboard lags by 5 minutes.",
     "customer": "David Chen",
     "priority": "Low",
-    "status": "In-Progress",
+    "status": "Open",
     "createdAt": "2026-03-01T11:45:00Z"
   },
   {
@@ -50,7 +50,7 @@
     "description": "Third-party CRM sync hitting limits every hour. Need optimization.",
     "customer": "Lila Varma",
     "priority": "High",
-    "status": "In-Progress",
+    "status": "Open",
     "createdAt": "2026-03-02T15:10:00Z"
   },
   {
@@ -77,7 +77,7 @@
     "description": "Profile pictures on user avatars are showing 404 errors.",
     "customer": "Fiona Gallagher",
     "priority": "Low",
-    "status": "In-Progress",
+    "status": "Open",
     "createdAt": "2026-03-03T14:45:00Z"
   },
   {
@@ -104,7 +104,7 @@
     "description": "App crashes immediately upon opening the 'History' tab on Android.",
     "customer": "Chloe Zhao",
     "priority": "High",
-    "status": "In-Progress",
+    "status": "Open",
     "createdAt": "2026-03-04T16:05:00Z"
   },
   {
@@ -113,7 +113,7 @@
     "description": "Tax calculation for UK residents is not applying the 20% VAT correctly.",
     "customer": "Simon Peter",
     "priority": "High",
-    "status": "In-Progress",
+    "status": "Open",
     "createdAt": "2026-03-05T07:45:00Z"
   },
   {

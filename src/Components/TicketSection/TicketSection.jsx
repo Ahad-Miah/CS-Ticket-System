@@ -18,7 +18,7 @@ const TicketSection = ({ ticketPromice,setProgress,progress,setTickets,tickets }
       </h3>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {tickets.map((ticket) => (
-         <TicketCard progress={progress} setProgress={setProgress} key={ticket.id} ticket={ticket}></TicketCard>
+         <TicketCard tickets={tickets} progress={progress} setTickets={setTickets}  setProgress={setProgress} key={ticket.id} ticket={ticket}></TicketCard>
         ))}
       </div>
     </div>
