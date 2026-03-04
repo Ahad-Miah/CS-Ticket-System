@@ -1,9 +1,11 @@
 import React from 'react';
 import { LuCalendarDays } from "react-icons/lu";
+import { toast } from 'react-toastify';
 
 const TicketCard = ({ticket,setProgress,progress}) => {
   const handleClick=(Pticket)=>{
     setProgress([...progress, Pticket]);
+    toast.success("Added Ticket. Ticket is in Progress")
   }
     return (
          <div onClick={()=>handleClick(ticket)}

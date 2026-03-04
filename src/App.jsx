@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import StatusSection from "./Components/StatusSection/StatusSection";
 import TicketSection from "./Components/TicketSection/TicketSection";
 import FooTer from "./Components/Footer/Footer";
+import { ToastContainer } from "react-toastify";
 
 const fetchTickets = async () => {
   const ticketResponse = await fetch("/tickets.json").then((res) => res.json());
@@ -15,11 +16,12 @@ const ticketPromice = fetchTickets();
 
 function App() {
   const [progress,setProgress]=useState([]);
+  const [resolve,setResolve]=useState([]);
   return (
     <div>
       <Navbar></Navbar>
       <section className="bg-[#dee5ea] pb-20">
-        <Banner progress={progress}></Banner>
+        <Banner resolve={resolve} progress={progress}></Banner>
         <div className=" mx-5 md:mx-10 md:grid grid-cols-4 gap-[24px]">
           <div className="col-span-3">
             <Suspense
@@ -37,10 +39,11 @@ function App() {
               <TicketSection progress={progress} setProgress={setProgress} ticketPromice={ticketPromice}></TicketSection>
             </Suspense>
           </div>
-          <StatusSection progress={progress} className=" border border-blue-700 h-60"></StatusSection>
+          <StatusSection setProgress={setProgress} setResolve={setResolve} resolve={resolve} progress={progress} className=" border border-blue-700 h-60"></StatusSection>
         </div>
       </section>
       <FooTer></FooTer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
