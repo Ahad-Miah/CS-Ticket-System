@@ -12,7 +12,7 @@ const StatusSection = ({progress,resolve,setResolve,setProgress,tickets,setTicke
         toast.success("Complete.Task Added on the Resolve list")
     }
     return (
-        <div className=' h-96 px-3 py-6 *:mb-10'>
+        <div className='px-3 py-6 *:mb-10'>
          <div>
             <h3 className='font-semibold text-2xl mb-3'>Task status</h3>
           {

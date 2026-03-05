@@ -4,7 +4,7 @@ import Banner from "./Components/Banner/Banner";
 import Navbar from "./Components/Navbar/Navbar";
 import StatusSection from "./Components/StatusSection/StatusSection";
 import TicketSection from "./Components/TicketSection/TicketSection";
-import FooTer from "./Components/Footer/Footer";
+import FooTer from "./Components/Footer/FooTer";
 import { ToastContainer } from "react-toastify";
 
 const fetchTickets = async () => {
