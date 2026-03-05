@@ -1,46 +1,210 @@
+# React Fundamentals -- Q&A README
+
+## Introduction
+
+This README provides clear explanations for some fundamental React
+concepts. It is useful for beginners preparing for React interviews or
+learning the basics of React development.
+
+------------------------------------------------------------------------
+
+## Table of Contents
+
+1.  JSX
+2.  State vs Props
+3.  useState Hook
+4.  Sharing State Between Components
+5.  Event Handling in React
+
+------------------------------------------------------------------------
 
 ## 1. What is JSX, and why is it used?
 
-**JSX (JavaScript XML)** is a syntax extension for JavaScript that allows you to write HTML-like structures directly inside your JavaScript files.
+**JSX (JavaScript XML)** is a syntax extension for JavaScript used in
+React to describe the UI structure.
 
-### Why use it?
-* **Readability:** It makes the structure of UI components easier to visualize and understand compared to raw `React.createElement` calls.
-* **Performance:** React transforms JSX into optimized JavaScript that the browser can execute.
-* **Safety:** JSX helps prevent Cross-Site Scripting (XSS) attacks by escaping values before rendering them.
+It allows developers to write HTML-like code inside JavaScript.
 
-**Example:**
-```jsx
-const element = <h1 className="title">Hello, World!</h1>;
+### Example
 
----
-# React: State vs. Props
+``` jsx
+const element = <h1>Hello, World!</h1>;
+```
 
-In React, both **State** and **Props** are plain JavaScript objects used to hold information that influences the output of a render, but they serve very different purposes.
+### Why JSX is used
 
----
+-   Makes UI code easier to read and write
+-   Combines UI logic and markup in one place
+-   Improves developer productivity
+-   Prevents injection attacks by escaping values
 
-## 1. Comparison Table
+JSX is not required in React, but it is widely used because it
+simplifies UI development.
 
-| Feature | Props (Properties) | State |
-| :--- | :--- | :--- |
-| **Definition** | Data passed from a parent to a child component. | Data managed locally within a component. |
-| **Mutability** | **Immutable** (Read-only for the child). | **Mutable** (Can be updated by the component). |
-| **Source** | Originates in the Parent component. | Originates inside the component itself. |
-| **Purpose** | Used to configure or share data with a child. | Used to handle user interactions or dynamic UI. |
-| **Update Trigger** | Parent re-renders or change in prop values. | Calling the state setter function (e.g., `setState`). |
+------------------------------------------------------------------------
 
----
+## 2. What is the difference between State and Props?
 
-## 2. What are Props?
-**Props** act like function arguments. They allow you to pass data (strings, numbers, objects, or even functions) from a parent component down to a child component. A child component cannot modify the props it receives; it can only "read" them.
+  -----------------------------------------------------------------------
+  Feature                 State                   Props
+  ----------------------- ----------------------- -----------------------
+  Definition              Internal data managed   Data passed from parent
+                          by a component          to child component
 
+  Mutability              Mutable (can change)    Immutable (read-only)
 
+  Controlled By           The component itself    Parent component
 
-**Example:**
-```jsx
+  Purpose                 Manage dynamic data     Pass data between
+                                                  components
+  -----------------------------------------------------------------------
+
+### Example
+
+``` jsx
 function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>; // Reading the prop
+  return <h1>Hello, {props.name}</h1>;
 }
+```
 
-// Usage in Parent:
-<Welcome name="John Miller" />
+Here, **name** is a prop passed to the component.
+
+------------------------------------------------------------------------
+
+## 3. What is the useState hook, and how does it work?
+
+`useState` is a React Hook that allows functional components to manage
+state.
+
+### Syntax
+
+``` jsx
+const [state, setState] = useState(initialValue);
+```
+
+### Example
+
+``` jsx
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+}
+```
+
+### How it works
+
+-   `count` stores the current state value
+-   `setCount` updates the state
+-   When the state changes, React re-renders the component
+
+------------------------------------------------------------------------
+
+## 4. How can you share state between components in React?
+
+The most common method is **Lifting State Up**.
+
+### Lifting State Up
+
+State is moved to the closest common parent component so multiple child
+components can access it through props.
+
+### Example
+
+``` jsx
+function Parent() {
+  const [data, setData] = useState("Hello");
+
+  return (
+    <>
+      <Child1 data={data} />
+      <Child2 data={data} />
+    </>
+  );
+}
+```
+
+### Other Methods
+
+-   React Context API
+-   State management libraries (Redux, Zustand)
+-   Custom hooks
+
+------------------------------------------------------------------------
+
+## 5. How is event handling done in React?
+
+Event handling in React is similar to DOM events but uses **camelCase
+syntax**.
+
+### Example
+
+``` jsx
+function Button() {
+  function handleClick() {
+    alert("Button clicked!");
+  }
+
+  return <button onClick={handleClick}>Click Me</button>;
+}
+```
+
+### Key Points
+
+-   Event names use camelCase (`onClick`, `onChange`)
+-   You pass a function instead of a string
+-   React uses a synthetic event system for better performance
+
+------------------------------------------------------------------------
+
+## Features
+
+-   Beginner-friendly explanations
+-   Simple React code examples
+-   Useful for interview preparation
+-   Covers key React fundamentals
+
+------------------------------------------------------------------------
+
+## Dependencies
+
+To run the examples in this README:
+
+-   Node.js
+-   React
+-   npm or yarn
+
+Install React:
+
+    npx create-react-app my-app
+    cd my-app
+    npm start
+
+------------------------------------------------------------------------
+
+## Troubleshooting
+
+**Problem:** State not updating\
+**Solution:** Ensure you're using the state setter function.
+
+**Problem:** Props undefined\
+**Solution:** Check if the parent component is passing props correctly.
+
+------------------------------------------------------------------------
+
+## Contributors
+
+Created for learning and educational purposes.
+
+------------------------------------------------------------------------
+
+## License
+
+This project is open-source and free to use for educational purposes.
